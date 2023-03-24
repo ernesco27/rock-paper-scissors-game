@@ -1,5 +1,5 @@
 //to begin with, i'm creating a function to get computer choice
-//this will be either Rock, Paper, and Scissors
+//this will be either Rock, Paper, or Scissors
 
 const computerSelection = getComputerChoice();
 
@@ -11,28 +11,56 @@ const computerSelection = getComputerChoice();
      return(choice[randomIndex]);
  }
 
-//this is a function for the game, specifying the conditional statements
+
+//this is a function for each round of game, specifying the conditional statements
 
 function playRound(playerSelection,computerSelection){
     //"Rock" > "Scissors";
     //"Scissors" > "Paper";
     //"Paper" > "Rock";
+    playerSelection = playerSelection.toLowerCase();     //this is to convert user input to lowercase  before comparison
 
-    if(playerSelection === computerSelection){
-        console.log("it's a tie! Let's go again!");
+    if(playerSelection == computerSelection){
+        return("it's a tie! Let's go again!");
     }else if(playerSelection == "Scissors" && computerSelection == "Paper"){
-        console.log(`You win ${playerSelection} beats ${computerSelection}`);
+        return("Player");
     }else if(playerSelection == "Paper" && computerSelection == "Rock"){
-        console.log(`You Win ${playerSelection} beats ${computerSelection}`);
+        return("Player");
     }else if(playerSelection == "Rock" && computerSelection == "Scissors"){
-        console.log(`You Win ${playerSelection} beats ${computerSelection}`)
+        return("Player")
     }else{
-        console.log(`You Lose ${computerSelection} beats ${playerSelection}`)
+        return("Computer")
     } 
 }
 
-playerSelection = prompt("What is your selection?");
+//this is the game function incorporating the game rounds and player scores.
+//while loop was used to break the tie
 
-playRound(playerSelection,computerSelection)
+function game(){
+    let playerScore = 0;
+    let computerScore = 0;
 
-//to do next; make playerselection case insensitive
+    while(playerScore < 5 && computerScore < 5){
+        const playerSelection = prompt("Choose between rock, paper or scissors");
+        const computerSelection = getComputerChoice();
+        const roundResults = playRound(playerSelection,computerSelection);
+
+        if(roundResults == "Player"){
+            console.log(`You Win, ${playerSelection} beats ${computerSelection}`);
+            playerScore++;
+        }else if(roundResults === "Computer"){
+            console.log(`You Lose, ${computerSelection} beats ${playerSelection}`);
+            computerScore++;
+        }else{
+            console.log("It's a tie! Let's go again.")
+        }
+    }
+
+    if(playerScore > computerScore){
+        console.log(`You've WON! The Final Score is ${playerScore} - ${computerScore}`);
+    }else{
+        console.log(`You've LOST! The Final Score is ${playerScore} - ${computerScore}`);
+    }
+}
+
+game();
