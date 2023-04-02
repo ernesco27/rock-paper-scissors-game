@@ -4,9 +4,51 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rock Paper Scissors Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Changa+One&family=Pacifico&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <script src="script.js"></script>
+    <div class="hero">
+        <h1>Rock - Paper - Scissors</h1>
+        <div class="score-container">
+            <div class="scores">
+                <span id="user-score">0</span>
+                :
+                <span id="cpu-score">0</span>
+            </div>
+            <div class="players-cont">
+                <div class="players-cont1">PLAYER</div>
+                <div class="players-cont2">CPU</div>
+            </div>  
+        </div>
+        <div class="results"></div>
+        <div class="selection-container">
+            <div class="image-container" id="Rock">
+                <img  class="btn-image" src="/images/rock.png" alt="Rock"  width="150" height="150">
+            </div>
+            <div class="image-container" id="Paper">
+                <img id="paper" class="btn-image" src="/images/paper.png" alt="Paper"  width="150" height="150" >
+            </div>
+            <div  class="image-container" id="Scissors">
+                <img id="scissors" class="btn-image" src="/images/scissors.png" alt="Scissors" width="150" height="150">
+            </div>
+        </div>
+        <p class="cta">==Make Your Move!==</p>
+    </div>
+    <div id="overlayId"></div>
+    <div id="end-game">
+        <div class="end-content">
+            <p id="headDec"></p>
+            <p id="headPara">You have the brain of a Super Computer....</p>
+            <button id="restart">Restart</button>
+        </div>
+    </div>
+    <div class="copy-cont">
+        <div id="copy">&copy</div>
+    </div>
 </body>
 </html>
