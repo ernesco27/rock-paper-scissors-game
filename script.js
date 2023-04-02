@@ -153,7 +153,7 @@ restartBtn.addEventListener('click', () =>{
 })
 
 function getYear(){
-    copyright.textContent += ` Ernest Aboah, ${new Date().getFullYear()} 💖` ;
+    copyright.textContent += ` Kwabena, ${new Date().getFullYear()} 💖` ;
     return
 }
 
