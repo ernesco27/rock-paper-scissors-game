@@ -16,6 +16,8 @@ const endGameHeader = document.getElementById('headDec');
 const endGamePara = document.getElementById('headPara');
 const restartBtn = document.getElementById('restart');
 const copyright = document.getElementById('copy');
+const sound = document.querySelector('.sound');
+const soundTwo = document.querySelector('.win-sound');
 
 
 
@@ -131,11 +133,13 @@ function endGame(){
 
 function finalMessage(){
         if(userScore === 5){
-            endGameHeader.textContent = "YOU WON! ❤️‍🔥"
-            endGamePara.textContent = 'You have the brain of a Super Computer...'
+            endGameHeader.textContent = "YOU WON! ❤️‍🔥";
+            endGamePara.textContent = 'You have the brain of a Super Computer...';
+            soundTwo.play();
         }else if(cpuScore === 5){
-            endGameHeader.textContent = "YOU LOST! 😢"
-            endGamePara.textContent = 'Mtcheeew. You disappoint me...'
+            endGameHeader.textContent = "YOU LOST! 😢";
+            endGamePara.textContent = 'Mtcheeew. You disappoint me...';
+            sound.play();
     }
     return  
 }
